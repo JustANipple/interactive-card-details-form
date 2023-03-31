@@ -1,9 +1,6 @@
 .main_cont {
     background-image: url(../../images/bg-main-mobile.png);
     background-repeat: no-repeat;
-}
-
-.card {
-    display: grid;
-    place-content: center;
+    background-position: top center;
+    width: fit-content;
 }

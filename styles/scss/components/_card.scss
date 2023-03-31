@@ -1,0 +1,16 @@
+.card {
+    display: grid;
+    gap: 2rem;
+}
+
+.card_back,
+.card_front {
+    height: 10rem;
+    width: 18rem;
+}
+
+.card_back {
+    background-image: url(../../images/bg-card-back.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
