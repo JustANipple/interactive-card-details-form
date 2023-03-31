@@ -1,10 +1,13 @@
 @use "../variables" as v;
 
 .card {
+    $card-offset: 2rem;
     font-family: v.$ff;
     font-size: v.$fs;
     line-height: 1;
     color: v.$main-bg;
+    display: grid;
+    place-content: center;
 }
 
 .card_back,
@@ -13,18 +16,20 @@
     width: 17.5rem;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-inline: 1rem;
 }
 
 .card_back {
     background-image: url(../../images/bg-card-back.png);
     font-size: calc(v.$fs / 1.75);
     margin-inline-start: auto;
+    position: relative;
+    z-index: 1;
+    transform: translateX(calc($card-offset * -1));
 
     .back_cvc {
-        position: relative;
-        top: 4.5rem;
-        left: 14.5rem;
+        position: absolute;
+        top: 4.425rem;
+        left: 14.125rem;
     }
 }
 
@@ -35,6 +40,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    transform: translateX(calc($card-offset * -1));
 
     .front_circles {
         display: flex;

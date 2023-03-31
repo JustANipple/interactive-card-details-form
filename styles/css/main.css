@@ -50,6 +50,8 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 1.125rem;
   line-height: 1;
   color: hsl(0, 0%, 100%);
+  display: grid;
+  place-content: center;
 }
 
 .card_back,
@@ -58,18 +60,20 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 17.5rem;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-inline: 1rem;
 }
 
 .card_back {
   background-image: url(../../images/bg-card-back.png);
   font-size: 0.6428571429rem;
   margin-inline-start: auto;
+  position: relative;
+  z-index: 1;
+  transform: translateX(-2rem);
 }
 .card_back .back_cvc {
-  position: relative;
-  top: 4.5rem;
-  left: 14.5rem;
+  position: absolute;
+  top: 4.425rem;
+  left: 14.125rem;
 }
 
 .card_front {
@@ -79,6 +83,8 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 .card_front .front_circles {
   display: flex;
