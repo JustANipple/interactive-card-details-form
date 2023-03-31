@@ -1,7 +1,6 @@
 @use "../variables" as v;
 
 .card {
-    $card-offset: 2rem;
     font-family: v.$ff;
     font-size: v.$fs;
     line-height: 1;
@@ -24,7 +23,7 @@
     margin-inline-start: auto;
     position: relative;
     z-index: 1;
-    transform: translateX(calc($card-offset * -1));
+    transform: translate(v.$card-offset, v.$card-offset);
 
     .back_cvc {
         position: absolute;
@@ -42,7 +41,7 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    transform: translateX(calc($card-offset * -1));
+    transform: translate(v.$card-offset * -1, v.$card-offset * -1);
 
     .front_circles {
         display: flex;

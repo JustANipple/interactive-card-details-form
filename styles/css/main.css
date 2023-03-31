@@ -38,11 +38,17 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Color */
 /* Media query */
+/* Spacing */
 .main_cont {
   background-image: url(../../images/bg-main-mobile.png);
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: contain;
+  background-size: 100% 15.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .main_cont {
+    background-image: url(../../images/bg-main-desktop.png);
+    background-size: unset;
+  }
 }
 
 .card {
@@ -68,7 +74,7 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-inline-start: auto;
   position: relative;
   z-index: 1;
-  transform: translateX(-2rem);
+  transform: translate(2rem, 2rem);
 }
 .card_back .back_cvc {
   position: absolute;
@@ -85,6 +91,7 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   position: relative;
   z-index: 2;
+  transform: translate(-2rem, -2rem);
 }
 .card_front .front_circles {
   display: flex;

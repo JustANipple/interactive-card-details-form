@@ -1,6 +1,12 @@
+@use "../variables" as v;
+
 .main_cont {
     background-image: url(../../images/bg-main-mobile.png);
     background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
+    background-size: 100% 15.5rem;
+
+    @media screen and (min-width: v.$min-width) {
+        background-image: url(../../images/bg-main-desktop.png);
+        background-size: unset;
+    }
 }
