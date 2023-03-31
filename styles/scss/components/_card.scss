@@ -1,16 +1,81 @@
+@use "../variables" as v;
+
 .card {
-    display: grid;
-    gap: 2rem;
+    font-family: v.$ff;
+    font-size: v.$fs;
+    line-height: 1;
+    color: v.$main-bg;
 }
 
 .card_back,
 .card_front {
     height: 10rem;
     width: 18rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-inline: 1rem;
 }
 
 .card_back {
     background-image: url(../../images/bg-card-back.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    font-size: calc(v.$fs / 1.75);
+    margin-inline-start: auto;
+
+    .back_cvc {
+        position: relative;
+        top: 4.5rem;
+        left: 14.5rem;
+    }
+}
+
+.card_front {
+    background-image: url(../../images/bg-card-front.png);
+    padding-block: 1rem 1.5rem;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .front_circles {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        .circle_filled,
+        .circle_empty {
+            border-radius: 100vw;
+            aspect-ratio: 1/1;
+        }
+
+        .circle_filled {
+            width: 2rem;
+            background-color: v.$main-bg;
+        }
+
+        .circle_empty {
+            width: .75rem;
+            border: 1px solid v.$main-bg;
+        }
+    }
+
+    .front_data {
+        display: grid;
+        row-gap: 1rem;
+
+        .data_pin {
+            letter-spacing: .185rem;
+        }
+
+        .data_info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: calc(v.$fs / 2);
+            letter-spacing: .1rem;
+
+            .info_owner {
+                text-transform: uppercase;
+            }
+        }
+    }
 }
