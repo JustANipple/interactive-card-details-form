@@ -72,16 +72,18 @@
 
         <div class="card_data_expiration">
           <label for="date">Exp. Date (MM/YY)</label>
-          <input 
-          type="number"
-          name="date"
-          id="month"
-          placeholder="MM">
-          <input 
-          type="number"
-          name="date"
-          id="year"
-          placeholder="YY">
+          <div class="expiration_date">
+            <input 
+            type="number"
+            name="date"
+            id="month"
+            placeholder="MM">
+            <input 
+            type="number"
+            name="date"
+            id="year"
+            placeholder="YY">
+          </div>
         </div>
 
         <div class="card_data_cvc">
@@ -99,13 +101,25 @@
       </form>
     </div>
 
+    <!-- ====== Success ====== -->
+    <div class="success">
+      <div class="success_icon">
+        <img 
+        src="images/icon-complete.svg" 
+        alt=""
+        aria-hidden="true"
+        class="icon_complete">
+      </div>
+      <div class="success_text">
+        <p class="text_thanks">Thank you!</p>
+        <p class="text_paragraph">
+          We've added your card details
+        </p>
+      </div>
+      <button class="success_continue">Continue</button>
+    </div>
+
   </main>
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
 
   <script src="scripts/script.js"></script>
 

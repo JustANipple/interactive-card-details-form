@@ -1,0 +1,39 @@
+.form_card_data {
+    display: grid;
+    align-items: start;
+    grid-template-areas: 
+    "name name name name"
+    "number number number number"
+    "exp exp cvc cvc"
+    "confirm confirm confirm confirm";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.card_data_name,
+.card_data_number,
+.card_data_expiration,
+.card_data_cvc,
+.card_data_submit {
+    display: grid;
+}
+
+.card_data_name {
+    grid-area: name;
+}
+
+.card_data_number {
+    grid-area: number;
+}
+
+.card_data_expiration {
+    grid-area: exp;
+}
+
+.card_data_cvc {
+    grid-area: cvc;
+}
+
+.card_data_submit {
+    grid-area: confirm;
+}
