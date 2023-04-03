@@ -67,7 +67,6 @@ body {
   max-width: 24rem;
   padding-inline: 0.5rem;
   margin-block: 1rem;
-  display: none;
 }
 
 input {
@@ -165,6 +164,7 @@ label {
   font-family: "Space Grotesk", sans-serif;
   width: 100%;
   max-width: 24rem;
+  display: none;
 }
 @media screen and (min-width: 64rem) {
   .success {

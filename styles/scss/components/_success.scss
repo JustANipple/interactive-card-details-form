@@ -10,6 +10,7 @@
     font-family: v.$ff;
     width: 100%;
     max-width: 24rem;
+    display: none;
 
     @media screen and (min-width: v.$min-width) {
         width: 24rem;
