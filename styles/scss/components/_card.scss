@@ -10,6 +10,8 @@
     @media screen and (min-width: v.$min-width) {
         display: flex;
         flex-direction: column-reverse;
+        font-size: calc(v.$fs * 1.5);
+        gap: 2.5rem;
     }
 }
 
@@ -17,48 +19,82 @@
 .card_front {
     height: 10rem;
     width: 17.5rem;
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0 0 3rem -1.5rem black;
+    border-radius: .25rem;
+    overflow: hidden;
+
+    @media screen and (min-width: v.$min-width) {
+        height: 15.25rem;
+        width: 28rem;
+        border-radius: .5rem;
+    }
 }
 
 .card_back {
-    background-image: url(../../images/bg-card-back.png);
     font-size: calc(v.$fs / 1.75);
     margin-inline-start: auto;
-    position: relative;
     z-index: 1;
     transform: translate(v.$card-offset, v.$card-offset);
 
     @media screen and (min-width: v.$min-width) {
-        transform: translate(v.$card-offset, v.$card-offset);
+        font-size: calc(v.$fs / 1.25);
+        transform: translate(0, 0);
+    }
+
+    .back_img {
+        position: absolute;
+        width: 100%;
     }
 
     .back_cvc {
         position: absolute;
         top: 4.425rem;
         left: 14.125rem;
+
+        @media screen and (min-width: v.$min-width) {
+            top: unset;
+            left: unset;
+            bottom: 7.25rem;
+            right: 3.75rem;
+            letter-spacing: .125rem;
+        }
     }
 }
 
 .card_front {
-    background-image: url(../../images/bg-card-front.png);
-    padding-block: 1rem 1.5rem;
+    padding-block: 1rem 1.25rem;
     padding-inline: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
     z-index: 2;
     transform: translate(v.$card-offset * -1, v.$card-offset * -1);
 
     @media screen and (min-width: v.$min-width) {
-        transform: translate(v.$card-offset * -1, v.$card-offset * -1);
+        padding-block: 1.5rem 1.75rem;
+        padding-inline: 2rem;
+        transform: translate(0, 0);
+        margin-inline-end: 6rem;
+    }
+
+    .front_img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
     }
 
     .front_circles {
         display: flex;
         align-items: center;
         gap: .5rem;
+
+        @media screen and (min-width: v.$min-width) {
+            gap: 1rem;
+        }
 
         .circle_filled,
         .circle_empty {
@@ -69,20 +105,36 @@
         .circle_filled {
             width: 2rem;
             background-color: v.$main-bg;
+
+            @media screen and (min-width: v.$min-width) {
+                width: 3rem;
+            }
         }
 
         .circle_empty {
             width: .75rem;
             border: 1px solid v.$main-bg;
+
+            @media screen and (min-width: v.$min-width) {
+                width: 1.25rem;
+            }
         }
     }
 
     .front_data {
         display: grid;
-        row-gap: 1rem;
+        row-gap: 1.25rem;
+
+        @media screen and (min-width: v.$min-width) {
+            row-gap: 2rem;
+        }
 
         .data_pin {
             letter-spacing: 0.156rem;
+
+            @media screen and (min-width: v.$min-width) {
+                letter-spacing: 0.25rem;
+            }
         }
 
         .data_info {
@@ -91,6 +143,10 @@
             align-items: center;
             font-size: calc(v.$fs / 2);
             letter-spacing: .1rem;
+
+            @media screen and (min-width: v.$min-width) {
+                font-size: calc(v.$fs / 1.325);
+            }
 
             .info_owner {
                 text-transform: uppercase;

@@ -54,12 +54,17 @@ body {
 
 .main_cont {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   height: 100vh;
+  padding-inline: 1rem;
 }
 @media screen and (min-width: 48rem) {
   .main_cont {
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8rem;
   }
 }
 
@@ -74,6 +79,8 @@ body {
   .card {
     display: flex;
     flex-direction: column-reverse;
+    font-size: 1.6875rem;
+    gap: 2.5rem;
   }
 }
 
@@ -81,49 +88,85 @@ body {
 .card_front {
   height: 10rem;
   width: 17.5rem;
-  background-size: contain;
-  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: 0 0 3rem -1.5rem black;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 48rem) {
+  .card_back,
+  .card_front {
+    height: 15.25rem;
+    width: 28rem;
+    border-radius: 0.5rem;
+  }
 }
 
 .card_back {
-  background-image: url(../../images/bg-card-back.png);
   font-size: 0.6428571429rem;
   margin-inline-start: auto;
-  position: relative;
   z-index: 1;
   transform: translate(2rem, 2rem);
 }
 @media screen and (min-width: 48rem) {
   .card_back {
-    transform: translate(2rem, 2rem);
+    font-size: 0.9rem;
+    transform: translate(0, 0);
   }
+}
+.card_back .back_img {
+  position: absolute;
+  width: 100%;
 }
 .card_back .back_cvc {
   position: absolute;
   top: 4.425rem;
   left: 14.125rem;
 }
+@media screen and (min-width: 48rem) {
+  .card_back .back_cvc {
+    top: unset;
+    left: unset;
+    bottom: 7.25rem;
+    right: 3.75rem;
+    letter-spacing: 0.125rem;
+  }
+}
 
 .card_front {
-  background-image: url(../../images/bg-card-front.png);
-  padding-block: 1rem 1.5rem;
+  padding-block: 1rem 1.25rem;
   padding-inline: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   z-index: 2;
   transform: translate(-2rem, -2rem);
 }
 @media screen and (min-width: 48rem) {
   .card_front {
-    transform: translate(-2rem, -2rem);
+    padding-block: 1.5rem 1.75rem;
+    padding-inline: 2rem;
+    transform: translate(0, 0);
+    margin-inline-end: 6rem;
   }
+}
+.card_front .front_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
 }
 .card_front .front_circles {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .card_front .front_circles {
+    gap: 1rem;
+  }
 }
 .card_front .front_circles .circle_filled,
 .card_front .front_circles .circle_empty {
@@ -134,16 +177,36 @@ body {
   width: 2rem;
   background-color: hsl(0, 0%, 100%);
 }
+@media screen and (min-width: 48rem) {
+  .card_front .front_circles .circle_filled {
+    width: 3rem;
+  }
+}
 .card_front .front_circles .circle_empty {
   width: 0.75rem;
   border: 1px solid hsl(0, 0%, 100%);
 }
+@media screen and (min-width: 48rem) {
+  .card_front .front_circles .circle_empty {
+    width: 1.25rem;
+  }
+}
 .card_front .front_data {
   display: grid;
-  row-gap: 1rem;
+  row-gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .card_front .front_data {
+    row-gap: 2rem;
+  }
 }
 .card_front .front_data .data_pin {
   letter-spacing: 0.156rem;
+}
+@media screen and (min-width: 48rem) {
+  .card_front .front_data .data_pin {
+    letter-spacing: 0.25rem;
+  }
 }
 .card_front .front_data .data_info {
   display: flex;
@@ -151,6 +214,11 @@ body {
   align-items: center;
   font-size: 0.5625rem;
   letter-spacing: 0.1rem;
+}
+@media screen and (min-width: 48rem) {
+  .card_front .front_data .data_info {
+    font-size: 0.8490566038rem;
+  }
 }
 .card_front .front_data .data_info .info_owner {
   text-transform: uppercase;

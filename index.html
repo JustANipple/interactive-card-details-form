@@ -15,13 +15,24 @@
 
   <main class="main_cont">
 
+    <!-- ====== Cards ====== -->
     <div class="card">
 
       <div class="card_back">
+        <img 
+        src="images/bg-card-back.png" 
+        alt=""
+        aria-hidden="true"
+        class="back_img">
         <p class="back_cvc">000</p>
       </div>
       
       <div class="card_front">
+        <img 
+        src="images/bg-card-front.png" 
+        alt=""
+        aria-hidden="true"
+        class="front_img">
         <div class="front_circles">
           <div class="circle_filled"></div>
           <div class="circle_empty"></div>
@@ -37,25 +48,58 @@
       
     </div>
 
+    <!-- ====== Form ====== -->
+    <div class="form">
+      <form class="form_card_data">
+
+        <div class="card_data_name">
+          <label for="name">Cardholder Name</label>
+          <input 
+          type="text" 
+          name="name" 
+          id="name"
+          placeholder="e.g. Jane Appleseed">
+        </div>
+
+        <div class="card_data_number">
+          <label for="number">Card Number</label>
+          <input 
+          type="number"
+          name="number"
+          id="number"
+          placeholder="e.g. 1234 5678 9123 0000">
+        </div>
+
+        <div class="card_data_expiration">
+          <label for="date">Exp. Date (MM/YY)</label>
+          <input 
+          type="number"
+          name="date"
+          id="month"
+          placeholder="MM">
+          <input 
+          type="number"
+          name="date"
+          id="year"
+          placeholder="YY">
+        </div>
+
+        <div class="card_data_cvc">
+          <label for="cvc">CVC</label>
+          <input 
+          type="number"
+          name="cvc"
+          id="cvc"
+          placeholder="e.g. 123">
+        </div>
+
+        <button class="card_data_submit">
+          Confirm
+        </button>
+      </form>
+    </div>
+
   </main>
-  
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-
 
   <!-- Completed state start -->
 
