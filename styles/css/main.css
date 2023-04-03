@@ -39,15 +39,27 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Color */
 /* Media query */
 /* Spacing */
-.main_cont {
+body {
   background-image: url(../../images/bg-main-mobile.png);
   background-repeat: no-repeat;
-  background-size: 100% 15.5rem;
+  background-size: 100% 15rem;
+  transition: background-size 0.5s ease-in-out;
+}
+@media screen and (min-width: 48rem) {
+  body {
+    background-image: url(../../images/bg-main-mobile.png);
+    background-size: 30rem 100%;
+  }
+}
+
+.main_cont {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 @media screen and (min-width: 48rem) {
   .main_cont {
-    background-image: url(../../images/bg-main-desktop.png);
-    background-size: unset;
+    align-items: center;
   }
 }
 
@@ -56,8 +68,13 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 1.125rem;
   line-height: 1;
   color: hsl(0, 0%, 100%);
-  display: grid;
-  place-content: center;
+  height: fit-content;
+}
+@media screen and (min-width: 48rem) {
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .card_back,
@@ -76,6 +93,11 @@ p, h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   transform: translate(2rem, 2rem);
 }
+@media screen and (min-width: 48rem) {
+  .card_back {
+    transform: translate(2rem, 2rem);
+  }
+}
 .card_back .back_cvc {
   position: absolute;
   top: 4.425rem;
@@ -92,6 +114,11 @@ p, h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   transform: translate(-2rem, -2rem);
+}
+@media screen and (min-width: 48rem) {
+  .card_front {
+    transform: translate(-2rem, -2rem);
+  }
 }
 .card_front .front_circles {
   display: flex;

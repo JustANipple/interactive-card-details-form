@@ -5,8 +5,12 @@
     font-size: v.$fs;
     line-height: 1;
     color: v.$main-bg;
-    display: grid;
-    place-content: center;
+    height: fit-content;
+
+    @media screen and (min-width: v.$min-width) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 .card_back,
@@ -25,6 +29,10 @@
     z-index: 1;
     transform: translate(v.$card-offset, v.$card-offset);
 
+    @media screen and (min-width: v.$min-width) {
+        transform: translate(v.$card-offset, v.$card-offset);
+    }
+
     .back_cvc {
         position: absolute;
         top: 4.425rem;
@@ -42,6 +50,10 @@
     position: relative;
     z-index: 2;
     transform: translate(v.$card-offset * -1, v.$card-offset * -1);
+
+    @media screen and (min-width: v.$min-width) {
+        transform: translate(v.$card-offset * -1, v.$card-offset * -1);
+    }
 
     .front_circles {
         display: flex;
