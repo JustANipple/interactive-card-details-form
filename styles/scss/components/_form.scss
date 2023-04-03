@@ -15,19 +15,21 @@
     max-width: 24rem;
     padding-inline: .5rem;
     margin-block: 1rem;
+    display: none;
 }
 
 input {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid v.$input-border;
-    padding-block: .875rem .625rem;
+    padding-block: .5rem .5rem;
     padding-inline: 1rem;
     border-radius: .5rem;
     outline: none;
+    font-size: v.$fs;
 
     &::placeholder {
-        font-size: calc(v.$fs);
+        font-size: inherit;
         color: v.$placeholder;
         opacity: 50%;
         font-weight: v.$fw-medium;
@@ -97,5 +99,9 @@ label {
     border: none;
     padding-block: .75rem;
     border-radius: .5rem;
-    margin-block: .825rem;
+    margin-block: .625rem;
+
+    @media screen and (min-width: v.$min-width) {
+        margin-block: .825rem;
+    }
 }
