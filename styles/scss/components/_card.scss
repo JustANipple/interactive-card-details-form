@@ -3,6 +3,7 @@
 .card {
     font-family: v.$ff;
     font-size: v.$fs;
+    letter-spacing: v.$letter-spacing;
     font-weight: v.$fw-medium;
     line-height: 1;
     color: v.$main-bg;
@@ -58,7 +59,7 @@
             left: unset;
             bottom: 7.25rem;
             right: 3.75rem;
-            letter-spacing: .125rem;
+            letter-spacing: calc(v.$letter-spacing * 1.25);
         }
     }
 }
@@ -131,10 +132,10 @@
         }
 
         .data_pin {
-            letter-spacing: 0.156rem;
+            letter-spacing: calc(v.$letter-spacing * 1.563);
 
             @media screen and (min-width: v.$min-width) {
-                letter-spacing: 0.25rem;
+                letter-spacing: calc(v.$letter-spacing * 2.5);
             }
         }
 
@@ -143,7 +144,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: calc(v.$fs / 2);
-            letter-spacing: .1rem;
+            letter-spacing: v.$letter-spacing;
 
             @media screen and (min-width: v.$min-width) {
                 font-size: calc(v.$fs / 1.325);

@@ -5,7 +5,7 @@ const yearRegex = new RegExp(/^(19|20)?\d{2}$/);
 const cvcRegex = new RegExp(/^\d{3,4}$/);
 const regexArr = [nameRegex, numberRegex, monthRegex, yearRegex, cvcRegex];
 const inputsArr = document.querySelectorAll("input");
-const form = document.querySelector(".form");
+const form = document.querySelector(".form_card_data");
 const success = document.querySelector(".success");
 
 const sendForm = document.querySelector(".card_data_submit");
@@ -27,6 +27,5 @@ let rights = 0;
     }
 
     if(rights === 5) {
-        
     }
 }
