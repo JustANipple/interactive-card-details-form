@@ -15,6 +15,11 @@
     max-width: 24rem;
     padding-inline: .5rem;
     margin-block: 1rem;
+
+    @media screen and (min-width: v.$min-width) {
+        row-gap: 1.125rem;
+        padding-top: .625rem;
+    }
 }
 
 input {
@@ -54,6 +59,10 @@ label {
     display: grid;
     column-gap: .5rem;
     row-gap: .25rem;
+
+    @media screen and (min-width: v.$min-width) {
+        row-gap: .5rem;
+    }
 }
 
 .card_data_name {
@@ -100,12 +109,12 @@ label {
     font-size: v.$fs;
     font-weight: v.$fw-medium;
     border: none;
-    padding-block: .75rem;
+    padding-block: .875rem;
     border-radius: .5rem;
     margin-block: .625rem;
 
     @media screen and (min-width: v.$min-width) {
-        margin-block: .825rem;
+        margin-block: .75rem;
     }
 }
 
