@@ -38,6 +38,10 @@ input {
         opacity: 50%;
         font-weight: v.$fw-medium;
     }
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 label {
@@ -124,4 +128,8 @@ label {
 
 .valid {
     border: 1px solid v.$text-and-btn
+}
+
+button {
+    cursor: pointer
 }
