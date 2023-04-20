@@ -124,3 +124,11 @@ label {
         margin-block: .825rem;
     }
 }
+
+.alert {
+    border: 1px solid v.$error;
+}
+
+.valid {
+    border: 1px solid v.$text-and-btn
+}

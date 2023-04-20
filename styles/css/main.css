@@ -170,6 +170,14 @@ label {
   }
 }
 
+.alert {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+.valid {
+  border: 1px solid hsl(278, 68%, 11%);
+}
+
 .success {
   display: flex;
   flex-direction: column;

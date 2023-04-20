@@ -57,74 +57,69 @@
           type="text" 
           name="name" 
           id="name"
-          placeholder="e.g. Jane Appleseed">
+          placeholder="e.g. Jane Appleseed"
+          maxlength="32"
+          required>
           <p class="error">Can't be blank</p>
         </div>
 
         <div class="card_data_number">
           <label for="number">Card Number</label>
           <input 
-          type="number"
+          type="tel"
           name="number"
           id="number"
           placeholder="e.g. 1234 5678 9123 0000"
-          maxlength="16">
+          minlength="16"
+          maxlength="19"
+          required>
           <p class="error">Wrong format, numbers only</p>
         </div>
 
         <div class="card_data_expiration">
           <label for="date">Exp. Date (MM/YY)</label>
             <input 
-            type="number"
+            type="tel"
             name="date"
             id="month"
             placeholder="MM"
+            minlength="1"
+            maxlength="2"
             min="1"
-            max="12">
+            max="12"
+            required>
             <input 
-            type="number"
+            type="tel"
             name="date"
             id="year"
             placeholder="YY"
-            min="1"
-            max="99">
+            minlength="2"
+            maxlength="2"
+            min="0"
+            max="99"
+            required>
             <p class="error">Can't be blank</p>
         </div>
 
         <div class="card_data_cvc">
           <label for="cvc">CVC</label>
           <input 
-          type="number"
+          type="tel"
           name="cvc"
           id="cvc"
           placeholder="e.g. 123"
-          min="1"
-          max="999">
+          minlength="3"
+          maxlength="3"
+          min="000"
+          max="999"
+          required>
           <p class="error">Can't be blank</p>
         </div>
 
-        <button class="card_data_submit" type="button">
+        <button class="card_data_submit" type="submit">
           Confirm
         </button>
       </form>
-
-    <!-- ====== Success ====== -->
-    <div class="success">
-      <div class="success_icon">
-        <img 
-        src="images/icon-complete.svg" 
-        alt=""
-        aria-hidden="true"
-        class="icon_complete">
-      </div>
-      <div class="success_text">
-        <p class="text_thanks">Thank you!</p>
-        <p class="text_paragraph">
-          We've added your card details
-        </p>
-      </div>
-      <button class="success_continue">Continue</button>
-    </div>
 
   </main>
 
