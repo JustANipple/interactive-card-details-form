@@ -15,6 +15,8 @@
 
   <main class="main_cont">
 
+    <h1 class="sr-only">Interactive card details form</h1>
+
     <!-- ====== Cards ====== -->
     <div class="card">
 
@@ -85,8 +87,7 @@
             placeholder="MM"
             minlength="1"
             maxlength="2"
-            min="1"
-            max="12"
+            pattern="[0-9]|1[0-2]"
             required>
             <input 
             type="tel"
@@ -95,8 +96,7 @@
             placeholder="YY"
             minlength="2"
             maxlength="2"
-            min="0"
-            max="99"
+            pattern="\d{2}"
             required>
             <p class="error">Can't be blank</p>
         </div>
@@ -110,8 +110,6 @@
           placeholder="e.g. 123"
           minlength="3"
           maxlength="3"
-          min="000"
-          max="999"
           required>
           <p class="error">Can't be blank</p>
         </div>
