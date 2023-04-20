@@ -1,20 +1,44 @@
 const inputs = document.querySelectorAll("input");
-const btn = document.querySelector(".card_data_submit");
+const sendBtn = document.querySelector(".card_data_submit");
+const form = document.querySelector(".form_card_data");
+const success = document.querySelector(".success");
+const contBtn = document.querySelector(".success_continue");
 const frontPin = document.querySelector(".data_pin");
 const frontName = document.querySelector(".info_owner");
 const frontDate = document.querySelector(".info_expiration");
 const backCvc = document.querySelector(".back_cvc");
 
 
-btn.addEventListener("click", checkForm);
+sendBtn.addEventListener("click", checkForm);
 
-function checkForm() {
+function checkForm(e) {
+    e.preventDefault();
     for(const input of inputs) {
         if(!input.validity.valid) {
             input.setAttribute("class", "alert");
             input.parentElement.querySelector("p").style.display = "block";
         }
     }
+    if(form.checkValidity()) {
+        success.style.display = "flex";
+        form.style.display = "none";
+    }
+}
+
+contBtn.addEventListener("click", restoreForm);
+
+function restoreForm() {
+    success.style.display = "none";
+    form.style.display = "grid";
+    form.reset();
+    clearCards();
+}
+
+function clearCards() {
+    frontPin.textContent = "0000 0000 0000 0000";
+    frontName.textContent = "Jane Appleseed";
+    frontDate.textContent = "00/00";
+    backCvc.textContent = "000";
 }
 
 for(const input of inputs) {
@@ -59,5 +83,30 @@ function updatePin() {
 inputs[2].addEventListener("input", updateMonth);
 
 function updateMonth() {
-    
+    let month = frontDate.textContent.split("/");
+    month[0] = this.value;
+    if(this.value === "") {
+        month[0] = "00";
+    }
+    frontDate.textContent = month.join("/");
+}
+
+inputs[3].addEventListener("input", updateYear);
+
+function updateYear() {
+    let year = frontDate.textContent.split("/");
+    year[1] = this.value;
+    if(this.value === "") {
+        year[1] = "00";
+    }
+    frontDate.textContent = year.join("/");
+}
+
+inputs[4].addEventListener("input", updateCvc);
+
+function updateCvc() {
+    backCvc.textContent = this.value;
+    if(this.value === "") {
+        backCvc.textContent = "000";
+    }
 }
